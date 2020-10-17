@@ -39,7 +39,7 @@ export default function Orphanage() {
     })
   }, [params.id])
 
-  if (!orphanage){
+  if (!orphanage) {
     return <p>Carregando...</p>
   }
 
@@ -53,10 +53,10 @@ export default function Orphanage() {
 
           <div className="images">
             {orphanage.images.map((image, index) => {
-              return(
-                <button 
-                  key={image.id} 
-                  className={ activeImageIndex === index ? 'active' : '' }
+              return (
+                <button
+                  key={image.id}
+                  className={activeImageIndex === index ? 'active' : ''}
                   type="button"
                   onClick={() => {
                     setActiveImageIndex(index)
@@ -67,15 +67,15 @@ export default function Orphanage() {
               )
             })}
           </div>
-          
+
           <div className="orphanage-details-content">
             <h1>{orphanage.name}</h1>
             <p>{orphanage.about}</p>
 
             <div className="map-container">
-              <Map 
-                center={[orphanage.latitude, orphanage.longitude]} 
-                zoom={16} 
+              <Map
+                center={[orphanage.latitude, orphanage.longitude]}
+                zoom={16}
                 style={{ width: '100%', height: 280 }}
                 dragging={false}
                 touchZoom={false}
@@ -83,7 +83,7 @@ export default function Orphanage() {
                 scrollWheelZoom={false}
                 doubleClickZoom={false}
               >
-                <TileLayer 
+                <TileLayer
                   url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
                 />
                 <Marker interactive={false} icon={mapIcon} position={[orphanage.latitude, orphanage.longitude]} />
@@ -102,22 +102,21 @@ export default function Orphanage() {
             <div className="open-details">
               <div className="hour">
                 <FiClock size={32} color="#15B6D6" />
-                Segunda à Sexta <br />
                 {orphanage.opening_hours}
               </div>
-              { orphanage.open_on_weekends ? (
+              {orphanage.open_on_weekends ? (
                 <div className="open-on-weekends">
                   <FiInfo size={32} color="#39CC83" />
                   Atendemos <br />
                   fim de semana
                 </div>
               ) : (
-                <div className="open-on-weekends doesnt-open">
-                  <FiInfo size={32} color="#FF669D" />
+                  <div className="open-on-weekends doesnt-open">
+                    <FiInfo size={32} color="#FF669D" />
                   Não atendemos <br />
                   fim de semana
-                </div>
-              ) }
+                  </div>
+                )}
             </div>
             {/*
             <button type="button" className="contact-button">
