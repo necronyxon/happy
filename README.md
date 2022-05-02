@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/RafaelHerzog/happy">
-  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/RafaelHerzog/happy">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/necronyxon/happy">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/necronyxon/happy">
 </p>
 
 <br>
